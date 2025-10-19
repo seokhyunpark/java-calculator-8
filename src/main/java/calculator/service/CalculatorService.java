@@ -16,4 +16,12 @@ public class CalculatorService {
         return "[,:]";
     }
 
+    private String extractNumbers(String input) {
+        if (input.startsWith(CUSTOM_DELIMITER_PREFIX)) {
+            int delimiterIndex = input.indexOf(CUSTOM_DELIMITER_SUFFIX);
+            return input.substring(delimiterIndex + CUSTOM_DELIMITER_SUFFIX.length());
+        }
+        return input;
+    }
+
 }
