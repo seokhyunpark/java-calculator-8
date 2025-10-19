@@ -5,6 +5,9 @@ public class CalculatorService {
     private static final String CUSTOM_DELIMITER_SUFFIX = "\\n";
 
     public int calculate(String input) {
+        if (input.isEmpty()) {
+            return 0;
+        }
         String delimiter = extractDelimiter(input);
         String numbers = extractNumbers(input);
         return sum(numbers, delimiter);
